@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Peer-to-peer Web Messenger</title>
+  <link rel="stylesheet" type="text/css" href="styles.css"/>
+</head>
+
+<body class = "loginVisible">
+  <form id = "username" action="#"> 
+    <p> Type in your username: </p>
+    <input class="required" type="text" size="50" onblur="return allowOnlyOneUserName(this.value)"/>
+    <input type="submit"/>
+  </form>
+
+  <header>
+    <h1>Welcome to Peer-to-Peer Web Messenger</h1>
+  </header>
+
+  <nav> 
+    <p> Send A Message to your friend?</p>
+    <h2>Guideline for sending a message:</p>
+      <ol class="notes"> 
+        <li> The message can not be over 140 characters. </li>
+        <li><center>'To' follows the format: username or *. * will send the message to all your friends.</li>
+      </ol>
+    </p>
+    <table class = "sendMessage">
+      <tr>
+        <td>Message: </td>
+        <td><input id="message" type="text" size="50" maxLength="200" autocomplete="off"/></td>
+      </tr>
+
+      <tr>
+        <td>To: </td>
+        <td>  <input id="recipient" type="text" size="30" maxLength="30" autocomplete="off"/></td>
+      </tr>
+    </table>
+    <br></br>
+    <button onclick="sendMessage()" type="button" id="button">Send Message</button>  
+    <br></br>
+  </nav>
+  <section>
+    <h1>Chat</h1>
+    <ul id="chat" class="chat">
+    </ul>
+  </section>
+  <script src="/inputValidator.js"></script>
+</body>
+</html>
